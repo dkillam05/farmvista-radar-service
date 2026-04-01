@@ -1,0 +1,13 @@
+{
+  "name": "farmvista-radar",
+  "version": "1.0.0",
+  "description": "FarmVista radar backend service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7"
+  }
+}
