@@ -6,6 +6,15 @@ const fetch = require("node-fetch");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  if (req.method === 'OPTIONS') {
+    return res.status(204).end();
+  }
+  next();
+});
 
 const RIDGE_INDEX_URL = "https://radar.weather.gov/ridge/standard/";
 const CACHE_MS = 2 * 60 * 1000;
